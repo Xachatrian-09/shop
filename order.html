@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="order-container">
+        <div class="hearts-bg" id="heartsBg"></div>
+    <form id="orderForm" class="order-form">
+        <h2>ORDER</h2>
+        
+        <div class="input-group">
+            <input type="text" id="name" required>
+            <label for="name">Full name</label>
+            <div class="bar"></div>
+        </div>
+
+        <div class="input-group">
+            <input type="email" id="email" required>
+            <label for="email">Gmail</label>
+            <div class="bar"></div>
+        </div>
+
+        <div class="input-group">
+            <input type="tel" id="phone" required>
+            <label for="phone">Phone number</label>
+            <div class="bar"></div>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="location" required>
+            <label for="location">Location</label>
+            <div class="bar"></div>
+        </div>
+ <div class="input-group">
+            <input type="text" id="location" required>
+            <label for="location">Which product</label>
+            <div class="bar"></div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+            <span>Ուղարկել Պատվերը</span>
+            <div class="liquid"></div>
+        </button>
+    </form>
+</div>
+</body>
+<style>
+    :root {
+    --primary: #a89a98;
+    --secondary: #4a383c;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background: #4e3a3a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.order-container {
+    position: relative;
+    padding: 40px;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 400px;
+    animation: formAppear 1s ease-out;
+}
+
+@keyframes formAppear {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    transition: 0.5s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #888;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.input-group .bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transition: 0.5s;
+}
+
+.input-group input:focus ~ .bar {
+    width: 100%;
+}
+
+
+.submit-btn {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border: none;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(255, 75, 43, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(91, 67, 63, 0.5);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+.hearts-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    border-radius: 20px;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    background-color: #685551;
+    width: 20px; height: 20px;
+    transform: rotate(-45deg);
+    animation: floatHeart linear infinite;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px; height: 20px;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { top: 0; left: 10px; }
+
+@keyframes floatHeart {
+    0% { transform: translateY(0) rotate(-45deg) scale(1); opacity: 0.8; }
+    100% { transform: translateY(-120vh) rotate(-45deg) scale(1.5); opacity: 0; }
+}
+</style>
+<script>document.getElementById('orderForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const btn = document.querySelector('.submit-btn');
+    const originalText = btn.innerHTML;
+    
+  
+    btn.innerHTML = 'Ուղարկվում է...';
+    btn.style.opacity = '0.7';
+    
+    setTimeout(() => {
+        btn.innerHTML = '✅ Պատվերը ընդունված է';
+        btn.style.background = '#28a745';
+        btn.style.opacity = '1';
+        
+       
+        setTimeout(() => {
+            document.getElementById('orderForm').reset();
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+        }, 3000);
+    }, 1500);
+});
+function createHeart() {
+    const container = document.getElementById('heartsBg');
+    if (!container) return;
+
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+
+    heart.style.left = Math.random() * 100 + '%';
+    const duration = Math.random() * 5 + 5;
+    heart.style.animationDuration = duration + 's';
+    
+    const size = Math.random() * 0.8 + 0.5;
+    heart.style.scale = size;
+
+  
+    heart.style.backgroundColor = Math.random() > 0.5 ? '#ff4b2b' : '#ffffff';
+
+    container.appendChild(heart);
+
+    setTimeout(() => { heart.remove(); }, duration * 1000);
+}
+
+
+setInterval(createHeart, 400);
+</script>
+</html>

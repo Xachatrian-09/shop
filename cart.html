@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+
+<h2>Order Form</h2>
+
+<form>
+  <input placeholder="Name">
+  <input placeholder="Email">
+  <input placeholder="Password">
+  <input placeholder="Phone">
+  <input placeholder="Location">
+  <input placeholder="Card Number">
+  <input placeholder="Time">
+
+  <button type="button" onclick="submitOrder()">Submit</button>
+</form>
+
+<script src="script.js"></script>
+
+<script>
+function renderCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let container = document.getElementById("cart-items");
+  let total = 0;
+
+  container.innerHTML = "";
+
+  cart.forEach(item => {
+    container.innerHTML += `<p>${item.name} x ${item.quantity}</p>`;
+    total += item.price * item.quantity;
+  });
+
+  document.getElementById("total").innerText = "Total: $" + total;
+}
+
+renderCart();
+
+function submitOrder() {
+  alert("Order placed!");
+  localStorage.removeItem("cart");
+}
+</script>
+
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: #e7e7e7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+h2{
+    margin: 15px 0;
+    color: #222;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+    background: #f9f9f9;
+}
+
+input:focus{
+    border-color: #292518;
+    background: white;
+    transform: scale(1.02);
+}
+
+
+button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #bda987;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background: #c5a49f;
+    transform: translateY(-2px);
+}
+
+
+.tarrer{
+    margin-top: 20px;
+    width: 320px;
+    background: #222;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+#cart-items p{
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+#total{
+    margin-top: 10px;
+    color: #baafa6;
+}
+</style>
+</body>
+</html>

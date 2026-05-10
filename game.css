@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: rgb(137, 116, 101);
+}
+
+#score {
+    font-family: sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+main {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+#container {
+    width: 30%;
+    height: 100%;
+    border: 3px solid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.user {
+    width: 10%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    user-select: none;
+    border: 1px solid;
+}
+
+.content {
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    user-select: none;
+}
+
+
+#win_block {
+    width: 300px;
+    height: 300px;
+    background-color: rgb(98, 69, 69);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: -50%;
+    left: 50%;
+}
+
+#win_text {
+    font-family: sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    background-color: rgb(66, 44, 30);
+    color: white;
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#restart {
+    display: none;
+}
+
+@keyframes win {
+    from {
+        top: -50%;
+    }
+
+    to {
+        top: 50%;
+    }
+}
+
+
+@keyframes win_reverse {
+    from {
+        top: 50%;
+    }
+
+    to {
+        top: -50%;
+    }
+}

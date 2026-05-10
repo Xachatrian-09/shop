@@ -1,0 +1,197 @@
+*{
+    background-color: #d9d4cf;
+}
+.nav-list{
+    display: flex;
+    justify-content: right;
+    gap: 55px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0%;
+    list-style: none;
+    position: relative;
+    padding:15px 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 60px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 35px black;
+    border:0.5px solid white;
+}
+
+.nav-list li{
+  display: flex;
+  align-items: center;
+}
+.nav-list li a {
+    text-decoration: none;
+    color:rgb(79, 47, 24);
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #bda386;     
+}
+.sign-in-button {
+    background-color: #d9d4cf;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px 0px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.header{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background: #d9d4cf;
+  padding: 15px 50px;
+  border-bottom: 2px solid rgb(78, 56, 56);
+
+}
+.logo{
+    width:120px;
+    height:120px;
+}
+
+.magazine{
+display: flex;
+align-items: center;
+gap: 8px;
+padding: 8px 16px;
+border: 2px solid #5a3732;
+border-radius: 20px; 
+cursor: pointer;
+transition: 0.3s;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+    }
+.magazine img{
+width: 16px;
+height:16px;
+align-items: center;
+    }
+.magazine:hover{
+background: #5a3732;
+color: white;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: Open Sans;
+}
+
+header {
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21.79px;
+    letter-spacing: 0%;
+    display: flex;
+    justify-content: right;
+    gap: 55px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0%;
+    list-style: none;
+    position: relative;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 60px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 35px black;
+    border: 0.5px solid white;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #646464;
+}
+
+#sign-in-button {
+    background-color: #CAA892;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px 0px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact {
+    background-color: #CAA892;
+    margin: 20px;
+    width: 1650px;
+    height: 100px;
+    justify-content: center;
+  
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width:1000px;
+    height:500px;
+    gap:15px;
+    justify-content: center;
+   margin:10px;
+}
+
+label {
+    display: block;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #94927f;
+    color: white;
+    padding: 14px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #ddd3b3;
+}

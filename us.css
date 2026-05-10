@@ -1,0 +1,278 @@
+* {
+  background-color: #d9d4cf;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: right;
+  gap: 55px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0%;
+  list-style: none;
+  position: relative;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 60px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 35px black;
+  border: 0.5px solid white;
+}
+
+.nav-list li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: rgb(79, 47, 24);
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: #bda386;
+}
+
+.sign-in-button {
+  background-color: #d9d4cf;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px 0px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d9d4cf;
+  padding: 15px 50px;
+  border-bottom: 2px solid rgb(78, 56, 56);
+
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+}
+
+.magazine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 2px solid #5a3732;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.magazine img {
+  width: 16px;
+  height: 16px;
+  align-items: center;
+}
+
+.magazine:hover {
+  background: #5a3732;
+  color: white;
+}
+
+.coffee {
+  float: right;
+  width: 500px;
+  height: 500px;
+}
+
+button {
+  color: #5a3732;
+  background-color: #69553e;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: rgb(72, 48, 48);
+  padding: 60px 5%;
+  font-family: sans-serif;
+}
+
+.content {
+  max-width: 500px;
+}
+
+.title {
+  font-size: 60px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #2e2626;
+}
+
+
+.btn-more {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 15px 40px;
+  border: 1px dashed #fff;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  
+
+  animation: moveBtn 2s infinite ease-in-out;
+  transition: 0.3s;
+}
+
+
+@keyframes moveBtn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); border-style: solid; }
+  100% { transform: scale(1); }
+}
+
+.btn-more:hover {
+  background-color: white;
+  color: black;
+  animation-play-state: paused; 
+}
+
+
+.image-container img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .image-container {
+    margin-top: 40px;
+  }
+}
+.map-section {
+  background-color:#d9d4cf;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 100px 8%;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+.gcik{
+  box-sizing: border-box;
+  width:1700px;
+  height:5px;
+  background-color: #5a3732;
+}
+.reveal-on-scroll {
+  animation: slideUp linear both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 40%;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.map-container {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+}
+
+.map-img {
+  width: 100%;
+  opacity: 0.6; 
+}
+
+.marker {
+  position: absolute;
+  width: 30px;
+  filter: drop-shadow(0 0 5px rgba(150, 132, 132, 0.5));
+}
+
+
+.map-content {
+  flex: 1;
+  max-width: 500px;
+  padding-left: 50px;
+}
+
+.map-title {
+  font-size: 55px;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.map-info {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #7d7171;
+  margin-bottom: 40px;
+}
+
+
+.btn-oval {
+  display: inline-block;
+  padding: 15px 50px;
+  border: 1px dashed #fff;
+  border-radius: 60px;
+  color: rgb(17, 13, 13);
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.btn-oval:hover {
+  background: rgb(107, 94, 94);
+  color: black;
+  border-style: solid;
+}
+
+
+@media (max-width: 900px) {
+  .map-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 5%;
+  }
+  .map-content {
+    padding-left: 0;
+    margin-top: 50px;
+  }
+  .map-title {
+    font-size: 35px;
+  }
+}
